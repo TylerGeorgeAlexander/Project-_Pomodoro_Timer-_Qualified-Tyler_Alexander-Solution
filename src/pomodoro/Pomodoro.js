@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import classNames from "../utils/class-names";
 import useInterval from "../utils/useInterval";
 import Session from "./Session"
-import { minutesToDuration } from "../utils/duration"
 import TimerDisplay from "./TimerDisplay";
+import PlayPause from "./PlayPause";
 
 const INITIAL_STATE= {
   isTimerRunning: false,
@@ -166,21 +166,8 @@ function Pomodoro() {
             role="group"
             aria-label="Timer controls"
           >
-            <button
-              type="button"
-              className="btn btn-primary"
-              data-testid="play-pause"
-              title="Start or pause timer"
-              onClick={playPause}
-            >
-              <span
-                className={classNames({
-                  oi: true,
-                  "oi-media-play": !isTimerRunning,
-                  "oi-media-pause": isTimerRunning,
-                })}
-              />
-            </button>
+            <PlayPause playPause={playPause} classNames={classNames} isTimerRunning={isTimerRunning} />
+              
             {/* TODO: Implement stopping the current focus or break session. and disable the stop button when there is no active session */}
             {/* TODO: Disable the stop button when there is no active session */}
             <button

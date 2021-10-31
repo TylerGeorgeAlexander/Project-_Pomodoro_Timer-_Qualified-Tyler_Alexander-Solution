@@ -15,7 +15,7 @@ export default function Session({ session, focusDuration, breakDuration }) {
     const secondInterval = (((`${x}`*60) - session?.timeRemaining) / (`${x}`*60)) * 100
 
     // console.log("Duration: ", (focusDuration*60), session.timeRemaining)
-    // console.log(secondInterval)
+     console.log(secondInterval)
 
 
     return (
