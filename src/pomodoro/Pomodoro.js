@@ -65,7 +65,6 @@ function Pomodoro() {
   // The current session - null where there is no session running
   const [session, setSession] = useState(INITIAL_STATE.session);
 
-  // ToDo: Allow the user to adjust the focus and break duration.
   const [focusDuration, setFocusDuration] = useState(25);
   const [breakDuration, setBreakDuration] = useState(5);
 
@@ -168,8 +167,6 @@ function Pomodoro() {
           >
             <PlayPause playPause={playPause} classNames={classNames} isTimerRunning={isTimerRunning} />
               
-            {/* TODO: Implement stopping the current focus or break session. and disable the stop button when there is no active session */}
-            {/* TODO: Disable the stop button when there is no active session */}
             <button
               type="button"
               className="btn btn-secondary"
@@ -183,7 +180,7 @@ function Pomodoro() {
           </div>
         </div>
       </div>
-      <Session session={session} focusDuration={focusDuration} breakDuration={breakDuration} />
+      { (session) && <Session session={session} focusDuration={focusDuration} breakDuration={breakDuration} />}
     </div>
   );
 }
