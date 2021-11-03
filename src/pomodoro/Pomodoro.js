@@ -110,21 +110,21 @@ function Pomodoro() {
   // Increase and Decrease focus buttons
   function handleDecreaseFocus() {
     if (focusDuration === 5) return;
-    setFocusDuration((focusDuration) => focusDuration - 5)
+    setFocusDuration((focusDuration) => focusDuration - 5);
   }
   function handleIncreaseFocus() {
     if (focusDuration === 60) return;
-    setFocusDuration((focusDuration) => focusDuration + 5)
+    setFocusDuration((focusDuration) => focusDuration + 5);
   }
   // My written Functions
   // Increase and Decrease break buttons
   function handleDecreaseBreak() {
     if (breakDuration === 1) return;
-    setBreakDuration((breakDuration) => breakDuration - 1)
+    setBreakDuration((breakDuration) => breakDuration - 1);
   }
   function handleIncreaseBreak() {
     if (breakDuration === 15) return;
-    setBreakDuration((state) => state + 1)
+    setBreakDuration((state) => state + 1);
   }
   
   // My written Functions
@@ -180,7 +180,7 @@ function Pomodoro() {
           </div>
         </div>
       </div>
-      { (session) && <Session session={session} focusDuration={focusDuration} breakDuration={breakDuration} />}
+      <Session session={session} focusDuration={focusDuration} breakDuration={breakDuration} />
     </div>
   );
 }
